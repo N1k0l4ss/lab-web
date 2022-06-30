@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+/*Site header*/
+.nav-header{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+/*Header nav link*/
+.nav-link{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #626262;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    transition: color .2s linear, border-bottom-color .4s linear;
+}
+.nav-link:hover{
+    border-bottom-color: #fc8a8a;
+    color: #fc8a8a;
+}
+
+/*Header logo*/
+.logo{
+    background: -webkit-linear-gradient(#fdfdfd, #bebebe);
+    border-width: 1px;
+    border-style: inset;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: rgba(128, 128, 128, 0.24);
+    border-top-color: rgba(128, 128, 128, 0.24);
+    text-align: center;
+
+}
+.logo img{
+    width: 350px;
+    margin: 50px auto;
+}
+
+/*Container*/
+.container{
+    max-width: 50%;
+    margin: 0 auto;
+    /*text-align: center;*/
+    justify-content: center;
+}
+
+/*Article*/
+.site-article{
+    padding-top: 30px;
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+    color: #151515;
+
+    padding-bottom: 30px;
+    border-bottom-width: 1px;
+    border-bottom-style: inset;
+    border-bottom-color: rgba(128, 128, 128, 0.24);
+}
+.article-image{
+    width: 50vh;
+    padding-right: 30px;
+}
+.main-text{
+    top: 0;
+    padding-top: 0;
+    text-align: left;
+}
+.article-content{
+    font-size: 12px;
+    line-height: 24px;
+}
+
+.article-title{
+    margin-top: 7px;
+    font-family: 'Raleway', sans-serif;
+}
+.article-creator{
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: #888888;
+}
+.article-category{
+    font-style: italic;
+    color: #888888;
+    font-family: "Times New Roman", serif;
+}
+.article-category span{
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.site-footer{
+    padding: 30px 0;
+    margin: 50px 0 0;
+    color: #626262;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    text-align: center;
+}
+
+/**/
+.blue-span{
+    color: blue;
+}
