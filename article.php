@@ -7,6 +7,11 @@ $articleId = $_GET['article'];
 $fields = getEmptyFields();
 try{
     $article = getArticleById($articleId);
+    if (null === $article){
+        http_response_code(404);
+        echo 'Article not found';
+        exit();
+    }
     $comments = getCommentsForPost($articleId);
 //    Form action
     $fields = fill($fields);
@@ -25,12 +30,6 @@ try{
 }
 
 $pageTitle = $article['title'];
-
-if (null === $article){
-    http_response_code(404);
-    echo 'Article not found';
-    exit();
-}
 ?>
 
 <!DOCTYPE html>
