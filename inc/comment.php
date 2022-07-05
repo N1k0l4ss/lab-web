@@ -1,25 +1,46 @@
 <?php
 
 /** @var int $articleId */
-require_once 'inc/commentData.php';
 
-if (!empty($validateInfo) && !empty($_POST))
-    echo "<div>$validateInfo</div>";
+//add-comment
+// article.php?article=
+
 ?>
 
 
 <div class="comment-make">
-    <form method="post">
-        <input name="author" id="author" type="text" placeholder="You name">
-        <label for="rate">Rate</label>
-        <select name="rate" id="rate">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5" selected>5</option>
-        </select>
-        <textarea name="content" id="content" placeholder="Comment"></textarea>
-        <button type="submit" class="button">Send</button>
+    <form method="post" action="/article.php?article=<?=$articleId?>&action=add-comment">
+        <div class="input">
+            <label for="author">Author</label>
+            <input name="author" id="author" type="text" placeholder="You name" value="<?=$_POST['author'] ?? null?>">
+            <?php if (isset($commentErrors['author'])){ ?>
+                <div class="error"><?=$commentErrors['author']?></div>
+            <?php } ?>
+        </div>
+
+        <div class="input">
+            <label for="rate">Rate</label>
+            <select name="rate" id="rate">
+                <?php for($i = 5; $i > 0; $i--) {?>
+                    <?php $isSelected = $i===(int)$_POST['rate'] ? "selected='selected'":"" ?>
+                    <?="<option value='$i' $isSelected>$i</option>"?>
+                <?php } ?>
+            </select>
+            <?php if (isset($commentErrors['rate'])){ ?>
+                <br><div class="error" ><?=$commentErrors['rate']?></div>
+            <?php } ?>
+        </div>
+
+        <div class="input">
+            <label for="content">Comment</label>
+            <textarea name="content" id="content" placeholder="Comment"><?=$_POST['content'] ?? null?></textarea>
+            <?php if (isset($commentErrors['content'])){ ?>
+                <div class="error"><?=$commentErrors['content']?></div><br>
+            <?php } ?>
+        </div>
+
+        <div class="submit">
+            <button type="submit" class="button">Send</button>
+        </div>
     </form>
 </div>

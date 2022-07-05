@@ -189,16 +189,30 @@ img{
 }
 .comment-make input,
 textarea,
-select{
+select,
+label{
     font-size: 10pt;
     padding: 5px;
-    margin: 10px;
     border: 1px solid #626262;
     border-radius: 5px;
 }
+.comment-make label{
+    border: none;
+}
+
+.input{
+    margin: 10px;
+}
+
+.input label{
+    display: block;
+}
+
+.submit{
+    margin: 10px;
+}
 
 .button{
-    margin: 10px;
     background-color: transparent;
     padding: 3px 7px;
     font-weight: 400;
@@ -220,15 +234,16 @@ select{
 }
 
 .comment-make textarea{
-    width: 99%;
+    width: 100%;
     height: 100px;
 }
 
 /**/
 
 .error{
-    margin-bottom: 5px;
+    margin-top: 5px;
     border-radius: 5px;
     padding: 10px;
     background-color: #ff9a9a;
+    white-space: nowrap;
 }

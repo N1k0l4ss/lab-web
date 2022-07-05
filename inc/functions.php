@@ -1,11 +1,16 @@
 <?php
+declare(strict_types=1);
 
 function getDbConnection(){
     $dbhost = 'localhost';
     $dbname = 'websitelab';
     $username = 'root';
     $passwd = 'root';
-    return $db = new PDO("mysql:host=$dbhost; dbname=$dbname", $username, $passwd);
+    $db = new PDO("mysql:host=$dbhost; dbname=$dbname", $username, $passwd);
+    $db->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+
+    return $db;
 }
 
 function getCommentsForPost(int $id): array{
@@ -18,39 +23,49 @@ function getArticles(){
 
 function getArticleById(int $id): ?array{
     $res = getDbConnection()->query("SELECT * FROM posts WHERE id = $id")->fetch();
-    if (empty($res)) {
+
+    if ($res === false) {
         return null;
-    } else return $res;
+    }
+
+    return $res;
 }
 
 function sendComment(array $data, int $id){
     $date = date("Y-m-d H:i:s");
     $sql = "INSERT INTO comments (post_id, rate, content, author, created) VALUES (?, ?, ?, ?, ?)";
-    getDbConnection()->prepare($sql)->execute([$id, $data['rate']['value'], $data['content']['value'], $data['author']['value'], $date]);
+    getDbConnection()->prepare($sql)->execute([$id, $data['rate'], $data['content'], $data['author'], $date]);
 
 }
 
-function fill($data): array
-{
-    foreach ($_POST as $k => $v){
-        if (array_key_exists($k, $data)){
-            $data[$k]['value'] = trim($v);
-        }
-    }
-    return $data;
-}
 
-function validate($data): string
+
+function validate(array $post): array
 {
-    $errors = '';
-    foreach ($data as $k => $v){
-       if ($v['required'] && empty($v['value'])){
-            $errors .= "<li class='error'>{$v['fieldName']} field can't be empty</li>";
-       }
-       if ($v['fieldName']=="Rate" && ($v['value'] > 5 || $v['value'] < 1)){
-           $errors .= "<li class='error'>{$v['fieldName']} must be in range from 1 to {$v['maxvalue']}</li>";
-       } else if ($v['maxvalue'] < strlen($v['value'])){
-           $errors .= "<li class='error'>{$v['fieldName']} field must contain lenght from 1 to {$v['maxvalue']} of chars</li>";
+    $rules = [
+        'author' => [
+            'required' => true,
+            'maxvalue' => 50,
+        ],
+        'rate' => [
+            'required' => true,
+            'maxvalue' => 5,
+        ],
+        'content' => [
+            'required' => true,
+            'maxvalue' => 200,
+        ],
+    ];
+
+    $errors = [];
+    foreach ($rules as $fieldName => $rule){
+        $value = $post[$fieldName];
+       if ($rule['required'] && empty($value)){
+            $errors[$fieldName] = "This fieldName can't be empty";
+       } elseif ($fieldName=="rate" && ($value > $rule['maxvalue'] || $value < 1)){
+           $errors[$fieldName] = "This must be in range from 1 to {$rule['maxvalue']}";
+       } elseif ($rule['maxvalue'] < mb_strlen($value)){
+           $errors[$fieldName] = "This fieldName must contain length from 1 to {$rule['maxvalue']} of chars";
        }
     }
     return $errors;

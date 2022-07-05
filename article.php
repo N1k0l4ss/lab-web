@@ -1,10 +1,16 @@
 <?php
+declare(strict_types=1);
 require_once 'inc/functions.php';
-require_once 'inc/commentData.php';
 
 $articleId = $_GET['article'];
+if (!ctype_digit($articleId)){
+    http_response_code(404);
+    echo 'Article not found';
+    exit();
+}
+$articleId = (int)$articleId;
+$action = $_GET['action'] ?? null;
 
-$fields = getEmptyFields();
 try{
     $article = getArticleById($articleId);
     if (null === $article){
@@ -12,15 +18,18 @@ try{
         echo 'Article not found';
         exit();
     }
+
     $comments = getCommentsForPost($articleId);
 //    Form action
-    $fields = fill($fields);
-    $validateInfo = validate($fields);
-    if (empty($validateInfo)){
-        sendComment($fields, $article['id']);
-        // Update page
-        header("Location: article.php?article=$articleId");
-        exit;
+    $commentErrors = [];
+    if ($action == "add-comment"){
+        $commentErrors = validate($_POST);
+        if (empty($commentErrors)) {
+            sendComment($_POST, $articleId);
+            // Update page
+            header("Location: article.php?article={$articleId}");
+            exit;
+        }
     }
 
 } catch (Exception $exception){
