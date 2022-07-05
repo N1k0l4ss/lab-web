@@ -12,6 +12,7 @@ if (!empty($_POST)){
     if (empty($validateInfo)){
         try {
             sendComment($fields, $articleId);
+            // todo make redirect
         } catch (Exception $exception){
             http_response_code(500);
             echo $exception->getMessage();
@@ -28,7 +29,7 @@ if (!empty($_POST)){
 <div class="comment-make">
     <form method="post" >
         <input name="author" id="author" type="text" placeholder="You name">
-        <label for="rate">Mark</label>
+        <label for="rate">Rate</label>
         <select name="rate" id="rate">
             <option value="1">1</option>
             <option value="2">2</option>

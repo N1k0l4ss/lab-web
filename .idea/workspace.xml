@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74a27451-f075-4384-aed4-d1258222b45a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/lab4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/css/ArticleStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/Style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/img/MyPhoto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/azalea-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc" afterDir="true" />
-      <change afterPath="$PROJECT_DIR$/inc/article.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/commentData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/commentView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/head.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inc/header.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +24,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration" cleanupOnStartRun="true">
     <configuration>C:\Users\nikit\AppData\Roaming\Subversion</configuration>
@@ -84,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1656957079840</updated>
       <workItem from="1656957092396" duration="384000" />
+      <workItem from="1656991889325" duration="1252000" />
     </task>
     <servers />
   </component>

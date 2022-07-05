@@ -34,7 +34,6 @@ function fill($data): array
 {
     foreach ($_POST as $k => $v){
         if (array_key_exists($k, $data)){
-            substr($v, 0, $data[$k]['maxvalue']);
             $data[$k]['value'] = trim($v);
         }
     }
@@ -45,8 +44,13 @@ function validate($data): string
 {
     $errors = '';
     foreach ($data as $k => $v){
-       if ($data[$k]['required'] && empty($data[$k]['value'])){
-            $errors .= "<li>Field {$data[$k]['fieldName']} is not filled</li>";
+       if ($v['required'] && empty($v['value'])){
+            $errors .= "<li class='error'>Field {$v['fieldName']} is not filled</li>";
+       }
+       if ($v['fieldName']=="Rate" && ($v['value'] > 5 || $v['value'] < 1)){
+           $errors .= "<li class='error'>Field {$v['fieldName']} must contain value from 1 to {$v['maxvalue']}</li>";
+       } else if ($v['maxvalue'] < strlen($v['value'])){
+           $errors .= "<li class='error'>Field {$v['fieldName']} must contain lenght from 1 to {$v['maxvalue']} of chars</li>";
        }
     }
     return $errors;
