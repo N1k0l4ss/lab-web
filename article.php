@@ -1,10 +1,23 @@
 <?php
 require_once 'inc/functions.php';
+require_once 'inc/commentData.php';
 
 $articleId = $_GET['article'];
+
+$fields = getEmptyFields();
 try{
     $article = getArticleById($articleId);
     $comments = getCommentsForPost($articleId);
+//    Form action
+    $fields = fill($fields);
+    $validateInfo = validate($fields);
+    if (empty($validateInfo)){
+        sendComment($fields, $article['id']);
+        // Update page
+        header("Location: article.php?article=$articleId");
+        exit;
+    }
+
 } catch (Exception $exception){
     http_response_code(500);
     echo $exception->getMessage();

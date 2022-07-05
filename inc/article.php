@@ -1,7 +1,7 @@
 <?php
     /**
      * @var array $article
-     * @var $currentPage
+     * @var string $currentPage
      */
 ?>
 <article class="site-article">
@@ -16,4 +16,5 @@
                 <p class="article-content"><?= $article["content"] ?></p>
             </div>
         </div>
+
     </article>

@@ -9,7 +9,7 @@ function getDbConnection(){
 }
 
 function getCommentsForPost(int $id): array{
-    return getDbConnection()->query("SELECT * FROM comments WHERE post_id = $id")->fetchAll(PDO::FETCH_ASSOC); // На всякий случай
+    return getDbConnection()->query("SELECT * FROM comments WHERE post_id = $id ORDER BY created DESC")->fetchAll(PDO::FETCH_ASSOC); // На всякий случай
 }
 
 function getArticles(){
@@ -45,12 +45,12 @@ function validate($data): string
     $errors = '';
     foreach ($data as $k => $v){
        if ($v['required'] && empty($v['value'])){
-            $errors .= "<li class='error'>Field {$v['fieldName']} is not filled</li>";
+            $errors .= "<li class='error'>{$v['fieldName']} field can't be empty</li>";
        }
        if ($v['fieldName']=="Rate" && ($v['value'] > 5 || $v['value'] < 1)){
-           $errors .= "<li class='error'>Field {$v['fieldName']} must contain value from 1 to {$v['maxvalue']}</li>";
+           $errors .= "<li class='error'>{$v['fieldName']} must be in range from 1 to {$v['maxvalue']}</li>";
        } else if ($v['maxvalue'] < strlen($v['value'])){
-           $errors .= "<li class='error'>Field {$v['fieldName']} must contain lenght from 1 to {$v['maxvalue']} of chars</li>";
+           $errors .= "<li class='error'>{$v['fieldName']} field must contain lenght from 1 to {$v['maxvalue']} of chars</li>";
        }
     }
     return $errors;

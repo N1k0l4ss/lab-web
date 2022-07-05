@@ -115,7 +115,14 @@ img{
     font-weight: bold;
     font-style: normal;
 }
+.comment-count{
+    display: flex;
+    justify-content: right;
+    margin: 0;
+    padding: 0;
+}
 
+/**/
 .site-footer{
     max-width: 100%;
     padding: 30px 0;
@@ -158,8 +165,6 @@ img{
 }
 
 .comment-created{
-    justify-content: right;
-    text-align: right;
     color: #888888;
 }
 
@@ -197,12 +202,21 @@ select{
     background-color: transparent;
     padding: 3px 7px;
     font-weight: 400;
-    border-bottom: 2px solid transparent;
-    transition: color .2s linear, border-bottom-color .1s linear;
+    border-radius: 3px;
+
+
+    /*border-bottom: 2px solid transparent;*/
+    border: 2px solid transparent;
+    transition: color .2s linear,
+    border-bottom-color .3s linear,
+    border-top-color .3s linear,
+    border-left-color .3s linear,
+    border-right-color .3s linear;
 }
 .button:hover{
     color: #fc8a8a;
-    border-bottom-color: #fc8a8a;
+    border-color: #fc8a8a;
+    /*border-bottom-color: #fc8a8a;*/
 }
 
 .comment-make textarea{

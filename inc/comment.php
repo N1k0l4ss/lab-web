@@ -1,33 +1,15 @@
 <?php
 
 /** @var int $articleId */
-
 require_once 'inc/commentData.php';
 
-$fields = getEmptyFields();
-
-if (!empty($_POST)){
-    $fields = fill($fields);
-    $validateInfo = validate($fields);
-    if (empty($validateInfo)){
-        try {
-            sendComment($fields, $articleId);
-            // todo make redirect
-        } catch (Exception $exception){
-            http_response_code(500);
-            echo $exception->getMessage();
-            exit();
-        }
-    }
-    else {
-        echo "<div>$validateInfo</div>";
-    }
-}
+if (!empty($validateInfo) && !empty($_POST))
+    echo "<div>$validateInfo</div>";
 ?>
 
 
 <div class="comment-make">
-    <form method="post" >
+    <form method="post">
         <input name="author" id="author" type="text" placeholder="You name">
         <label for="rate">Rate</label>
         <select name="rate" id="rate">

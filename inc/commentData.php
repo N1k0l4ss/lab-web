@@ -3,7 +3,7 @@
 function getEmptyFields(){
     return [
         'author' => [
-            'fieldName' => 'author',
+            'fieldName' => 'Author',
             'required' => 1,
             'maxvalue' => 50,
         ],
