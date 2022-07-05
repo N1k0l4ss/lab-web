@@ -22,7 +22,7 @@
             <label for="rate">Rate</label>
             <select name="rate" id="rate">
                 <?php for($i = 5; $i > 0; $i--) {?>
-                    <option value="<?=$i; ?>"<?= $i===(int)$_POST['rate'] ? ' selected ="selected"':'';  ?>>Rate <?= $i;  ?></option>
+                    <option value="<?=$i; ?>"<?= $i===(int)$_POST['rate']??null ? ' selected ="selected"':'';  ?>>Rate <?= $i;  ?></option>
                 <?php } ?>
             </select>
             <?php if (isset($commentErrors['rate'])){ ?>
