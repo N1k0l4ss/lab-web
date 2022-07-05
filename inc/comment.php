@@ -12,7 +12,7 @@
     <form method="post" action="/article.php?article=<?=$articleId?>&action=add-comment">
         <div class="input">
             <label for="author">Author</label>
-            <input name="author" id="author" type="text" placeholder="You name" value="<?=$_POST['author'] ?? null?>">
+            <input name="author" id="author" type="text" placeholder="You name" value="<?=htmlspecialchars($_POST['author']) ?? null?>">
             <?php if (isset($commentErrors['author'])){ ?>
                 <div class="error"><?=$commentErrors['author']?></div>
             <?php } ?>
@@ -22,8 +22,7 @@
             <label for="rate">Rate</label>
             <select name="rate" id="rate">
                 <?php for($i = 5; $i > 0; $i--) {?>
-                    <?php $isSelected = $i===(int)$_POST['rate'] ? "selected='selected'":"" ?>
-                    <?="<option value='$i' $isSelected>$i</option>"?>
+                    <option value="<?=$i; ?>"<?= $i===(int)$_POST['rate'] ? ' selected ="selected"':'';  ?>>Rate <?= $i;  ?></option>
                 <?php } ?>
             </select>
             <?php if (isset($commentErrors['rate'])){ ?>
@@ -33,7 +32,7 @@
 
         <div class="input">
             <label for="content">Comment</label>
-            <textarea name="content" id="content" placeholder="Comment"><?=$_POST['content'] ?? null?></textarea>
+            <textarea name="content" id="content" placeholder="Comment"><?=htmlspecialchars($_POST['content']) ?? null?></textarea>
             <?php if (isset($commentErrors['content'])){ ?>
                 <div class="error"><?=$commentErrors['content']?></div><br>
             <?php } ?>

@@ -24,7 +24,7 @@ try{
     $commentErrors = [];
     if ($action == "add-comment"){
         $commentErrors = validate($_POST);
-        if (empty($commentErrors)) {
+        if (count($commentErrors) === 0) {
             sendComment($_POST, $articleId);
             // Update page
             header("Location: article.php?article={$articleId}");
