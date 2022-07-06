@@ -9,7 +9,7 @@
 
 
 <div class="comment-make">
-    <form method="post" action="/article.php?article=<?=$articleId?>&action=add-comment">
+    <form method="post" action="article.php?article=<?=$articleId?>&action=add-comment">
         <div class="input">
             <label for="author">Author</label>
             <input name="author" id="author" type="text" placeholder="You name" value="<?=htmlspecialchars($_POST['author']) ?? null?>">

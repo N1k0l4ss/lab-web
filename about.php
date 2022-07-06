@@ -1,7 +1,7 @@
 <?php
 $article =  ['id' => null,
     'category' => 'info',
-    'image' => '/img/MyPhoto.jpg',
+    'image' => 'img/MyPhoto.jpg',
     'title' => 'About',
     'creator' => 'Nikita',
     'date' => '2022-06-20 08:36:00',

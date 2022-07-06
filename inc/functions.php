@@ -4,8 +4,8 @@ declare(strict_types=1);
 function getDbConnection(){
     $dbhost = 'localhost';
     $dbname = 'websitelab';
-    $username = 'root';
-    $passwd = 'root';
+    $username = 'dbuser';
+    $passwd = 'dbpass';
     $db = new PDO("mysql:host=$dbhost; dbname=$dbname", $username, $passwd);
     $db->setAttribute(PDO::ATTR_STRINGIFY_FETCHES, false);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
