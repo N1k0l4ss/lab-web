@@ -29,13 +29,14 @@ img{
     text-transform: uppercase;
     border-bottom: 3px solid transparent;
     transition: color .2s linear, border-bottom-color .4s linear;
-}
-.nav-link:hover,
-.nav-link.current{
-    color: #fc8a8a;
-}
-.nav-link:hover{
-    border-bottom-color: #fc8a8a;
+
+    &:hover,
+    &.current{
+        color: #fc8a8a;
+    }
+    &:hover{
+        border-bottom-color: #fc8a8a;
+    }
 }
 
 /*Header logo*/
@@ -48,11 +49,13 @@ img{
     border-bottom-color: rgba(128, 128, 128, 0.24);
     border-top-color: rgba(128, 128, 128, 0.24);
     text-align: center;
+
+    img{
+        width: 300px;
+        margin: 50px auto;
+    }
 }
-.logo img{
-    width: 300px;
-    margin: 50px auto;
-}
+
 
 /*Container*/
 .container{
@@ -74,10 +77,11 @@ img{
     border-bottom-width: 1px;
     border-bottom-style: inset;
     border-bottom-color: rgba(128, 128, 128, 0.24);
-}
-.site-article img{
-    width: 300px;
-    margin-right: 30px;
+
+    img{
+        width: 300px;
+        margin-right: 30px;
+    }
 }
 
 .article-content{
@@ -88,39 +92,36 @@ img{
 .article-title{
     margin-top: 5px;
     font-size: 24px;
+    a{
+        color: #151515;
+        transition: color .2s linear;
+        text-decoration: none;
+        &:hover{
+            color: #fc8a8a;
+            cursor: pointer;
+        }
+    }
 }
-.article-title a{
-    color: #151515;
-    transition: color .2s linear;
-    text-decoration: none;
-}
-.article-title a:hover{
-    color: #fc8a8a;
-    cursor: pointer;
-}
+
 .article-creator{
     margin-top: 5px;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     color: #888888;
 }
+
 .article-category{
     font-style: italic;
     color: #888888;
     font-family: "Times New Roman", serif;
+    span{
+        color: red;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-style: normal;
+    }
 }
-.article-category span{
-    color: red;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-style: normal;
-}
-.comment-count{
-    display: flex;
-    justify-content: right;
-    margin: 0;
-    padding: 0;
-}
+
 
 /**/
 .site-footer{
@@ -141,10 +142,10 @@ img{
     }
     .site-article{
         display: block;
-    }
-    .site-article img {
-        max-width: 100%;
-        padding: 0;
+        img {
+            max-width: 100%;
+            padding: 0;
+        }
     }
 }
 /**/
@@ -163,19 +164,15 @@ img{
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.24);
 }
-
 .comment-created{
     color: #888888;
 }
-
 .comment-rate{
     color: red;
 }
-
 .comment-author{
     color: blue;
 }
-
 /**/
 .comment-make{
     margin-bottom: 20px;
@@ -186,60 +183,52 @@ img{
     border-width: 2px;
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.24);
-}
-.comment-make input,
-textarea,
-select,
-label{
-    font-size: 10pt;
-    padding: 5px;
-    border: 1px solid #626262;
-    border-radius: 5px;
-}
-.comment-make label{
-    border: none;
-}
 
+    input,
+    textarea,
+    select,
+    label{
+        font-size: 10pt;
+        padding: 5px;
+        border: 1px solid #626262;
+        border-radius: 5px;
+    }
+    label{
+        border: none;
+    }
+
+    textarea{
+        width: 100%;
+        height: 100px;
+    }
+}
 .input{
     margin: 10px;
+    label{
+        display: block;
+    }
 }
-
-.input label{
-    display: block;
-}
-
 .submit{
     margin: 10px;
 }
-
 .button{
     background-color: transparent;
     padding: 3px 7px;
     font-weight: 400;
     border-radius: 3px;
 
-
-    /*border-bottom: 2px solid transparent;*/
     border: 2px solid transparent;
     transition: color .2s linear,
     border-bottom-color .3s linear,
     border-top-color .3s linear,
     border-left-color .3s linear,
     border-right-color .3s linear;
+    &:hover{
+        color: #fc8a8a;
+        border-color: #fc8a8a;
+    }
 }
-.button:hover{
-    color: #fc8a8a;
-    border-color: #fc8a8a;
-    /*border-bottom-color: #fc8a8a;*/
-}
-
-.comment-make textarea{
-    width: 100%;
-    height: 100px;
-}
-
 /**/
-
 .error{
     margin-top: 5px;
     border-radius: 5px;

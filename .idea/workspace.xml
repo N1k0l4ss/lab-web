@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="74a27451-f075-4384-aed4-d1258222b45a" name="Changes" comment="">
+    <list default="true" id="b01b95b8-436b-482b-8b21-3fb180afb6d5" name="Changes" comment="Commit linux">
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/Style.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/config.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/article.php" beforeDir="false" afterPath="$PROJECT_DIR$/article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/comment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/Style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/css/Style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/back.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/head.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,93 +22,28 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2BUOCrRULESLiwpoRTVw0OXrLYJ" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\nikit\AppData\Roaming\Subversion</configuration>
-    <supportedVersion>125</supportedVersion>
-  </component>
-  <component name="SvnFileUrlMappingImpl">
-    <option name="myMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\#Для ярлыков и хлама\документы никиты\Administration\WEB\OpenServer\domains\lab4" />
-          <option name="myCopyRoot" value="D:\#Для ярлыков и хлама\документы никиты\Administration\WEB\OpenServer\domains\lab4" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
-    <option name="myMoreRealMappingRoots">
-      <list>
-        <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="D:\#Для ярлыков и хлама\документы никиты\Administration\WEB\OpenServer\domains\lab4" />
-          <option name="myCopyRoot" value="D:\#Для ярлыков и хлама\документы никиты\Administration\WEB\OpenServer\domains\lab4" />
-        </SvnCopyRootSimple>
-      </list>
-    </option>
+}]]></component>
+  <component name="SvnConfiguration">
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="74a27451-f075-4384-aed4-d1258222b45a" name="Changes" comment="" />
-      <created>1656957079840</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1656957079840</updated>
-      <workItem from="1656957092396" duration="384000" />
-      <workItem from="1656991889325" duration="9453000" />
-    </task>
-    <task id="LOCAL-00001" summary="Styles, validation update">
-      <created>1656993307788</created>
+    <task id="LOCAL-00001" summary="Commit linux">
+      <created>1657114933293</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1656993307788</updated>
+      <updated>1657114933293</updated>
     </task>
-    <task id="LOCAL-00002" summary="Fixes2">
-      <created>1657009471732</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1657009471732</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Commit 3">
-      <created>1657024908289</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1657024908289</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Styles, validation update" />
-    <MESSAGE value="Fixes" />
-    <MESSAGE value="Fixes2" />
-    <MESSAGE value="Commit 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 3" />
+    <MESSAGE value="Commit linux" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit linux" />
   </component>
 </project>
