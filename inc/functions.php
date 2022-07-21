@@ -61,7 +61,7 @@ function validate(array $post): array
     foreach ($rules as $fieldName => $rule){
         $value = $post[$fieldName];
        if ($rule['required'] && empty($value)){
-            $errors[$fieldName] = "This fieldName can't be empty";
+            $errors[$fieldName] = "This field can't be empty";
        } elseif ($fieldName=="rate" && ($value > $rule['maxvalue'] || $value < 1)){
            $errors[$fieldName] = "This must be in range from 1 to {$rule['maxvalue']}";
        } elseif ($rule['maxvalue'] < mb_strlen($value)){
