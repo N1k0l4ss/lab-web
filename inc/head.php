@@ -17,6 +17,7 @@
 					if (result.success) {
 						var $commentsList = jQuery('.comments-list');
 						$commentsList.replaceWith(result.commentsList);
+						$commentsForm.find('.error').remove();
 
 						return;
 					}
