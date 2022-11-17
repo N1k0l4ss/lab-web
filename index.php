@@ -1,7 +1,7 @@
 <?php
 require_once 'inc/functions.php';
-$pageTitle = 'Home';
 $currentPage = 'home';
+$pageTitle = 'Home';
 try {
     $articles = getArticles();
 } catch (Exception $exception){

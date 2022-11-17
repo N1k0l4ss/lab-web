@@ -1,6 +1,10 @@
 <?php
 declare(strict_types=1);
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 function getDbConnection(){
     $dbhost = 'localhost';
     $dbname = 'websitelab';
@@ -31,14 +35,19 @@ function getArticleById(int $id): ?array{
     return $res;
 }
 
-function sendComment(array $data, int $id){
+function sendComment(array $data, int $id): void {
     $date = date("Y-m-d H:i:s");
     $sql = "INSERT INTO comments (post_id, rate, content, author, created) VALUES (?, ?, ?, ?, ?)";
     getDbConnection()->prepare($sql)->execute([$id, $data['rate'], $data['content'], $data['author'], $date]);
 
 }
 
-
+function renderElement(string $name, array $data = []): string {
+	ob_start();
+	extract($data);
+	require "inc/{$name}.php";
+	return ob_get_clean();
+}
 
 function validate(array $post): array
 {

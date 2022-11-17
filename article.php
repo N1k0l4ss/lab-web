@@ -2,6 +2,8 @@
 declare(strict_types=1);
 require_once 'inc/functions.php';
 
+$currentPage = 'home';
+
 $articleId = $_GET['article'];
 if (!ctype_digit($articleId)){
     http_response_code(404);
@@ -19,18 +21,29 @@ try{
         exit();
     }
 
-    $comments = getCommentsForPost($articleId);
 //    Form action
+	$isAjax = 'xmlhttprequest' === strtolower($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '');
     $commentErrors = [];
     if ($action == "add-comment"){
         $commentErrors = validate($_POST);
         if (count($commentErrors) === 0) {
-            sendComment($_POST, $articleId);
-            // Update page
-            header("Location: article.php?article={$articleId}");
+			sendComment($_POST, $articleId);
+            if (!$isAjax) {
+				header("Location: article.php?article={$articleId}");
+			} else {
+				$comments = getCommentsForPost($articleId);
+				$commentsList = renderElement('commentsList', compact('comments'));
+				echo json_encode(['success'=>true, 'commentsList'=>$commentsList]);
+			}
             exit;
-        }
+        } elseif ($isAjax) {
+			$commentsForm = renderElement('comment', compact('articleId', 'commentErrors'));
+
+			echo json_encode(['success'=>false, 'form'=>$commentsForm]);
+			exit;
+		}
     }
+	$comments = getCommentsForPost($articleId);
 
 } catch (Exception $exception){
     http_response_code(500);
@@ -50,10 +63,8 @@ $pageTitle = $article['title'];
     <?php
         require 'inc/article.php';
     ?>
-    <?php require 'inc/comment.php'?>
-    <?php foreach ($comments as $comment){ ?>
-        <?php  require 'inc/commentView.php'; ?>
-    <?php } ?>
+	<?= renderElement('comment', compact('articleId', 'commentErrors')); ?>
+	<?= renderElement('commentsList', compact('comments')); ?>
 </main>
 <?php require 'inc/footer.php'?>
 </body>
